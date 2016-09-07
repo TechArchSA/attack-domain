@@ -11,7 +11,7 @@ module Attack
 module Domain
     
   #
-  # Core contains all core/basic operations
+  # Core contains all core/basic operations. Basically, it's to simplify what we need from Dnsruby
   #
   # @attr_accessor [String] domain optionally assign domain
   # @attr_accessor [Array<String>]
