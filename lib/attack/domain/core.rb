@@ -4,10 +4,6 @@
 #
 #
 #
-#
-#
-
-
 require 'dnsruby'
 require 'ipaddr'
 
@@ -153,6 +149,8 @@ module Domain
     # host_ip_hash gets all all IPs that's assigned with the given domain,
     # then assign it to that domain in a Hash
     #
+    # @param [String] domain
+    #
     # @return [Hash{String => Array}]
     #
     def host_ip_hash(domain)
@@ -161,6 +159,8 @@ module Domain
 
     #
     # get_ptr gets all possible PTR records for the given IP address
+    #
+    # @param [String] domain_addr takes domain or address
     #
     # @return [Array<String>]
     #
@@ -187,7 +187,9 @@ module Domain
     #
     # zone_transfer get the zone transfer domain for the given domain
     #
+    # @param [String] domain
     #
+    # @return [Array<String>] return an array of domains that got transferred to
     #
     def get_zone_transfer(domain)
       # if zone_transfer_enabled? domain
@@ -210,6 +212,7 @@ module Domain
     # is_ip? checks whether the given string is an IP or not
     #
     # @return [Boolean] return the ip
+    #
     def is_ip?(str)
       
       ipv4 = IPAddr.new(str).ipv4? rescue $!.class == TypeError   # Rescue if not expected type
@@ -222,6 +225,7 @@ module Domain
     #
     # zone_transfer_enabled? checks if Zone Transfer is enables
     #
+    # @param [String] domain
     # FIXME: still querying ptr ??
     #
     def zone_transfer_enabled?(domain)
@@ -243,7 +247,7 @@ end
 
 
 #
-# Usage
+# Usage example
 #
 if __FILE__ == $0
   require 'pp'
@@ -258,23 +262,22 @@ if __FILE__ == $0
   ptr_ip3 = '91.198.174.192'   # wikipedia.org
 
   core = Attack::Domain::Core.new
-  # core.setup(nameserver: ['8.8.8.8', '8.8.4.4'], recurse: true, dnssec: false)
+  core.setup(nameserver: ['8.8.8.8', '8.8.4.4'], recurse: true, dnssec: false)
   puts "[+] get_records_objects(domain)"
-  # pp core.get_records_objects(domain3)
+  pp core.get_records_objects(domain3)
   
   puts "\n[+] get_domainname"
-  # pp core.get_domainname
+  pp core.get_domainname
 
   puts "\n[+] get_ptr(domain_addr)"
-  # pp core.get_ptr(ptr_ip1)
-  # # pp core.get_ptr(ptr_ip2)
-  # pp core.get_ptr(domain2)
-  # pp core.get_ptr(domain4)
+  pp core.get_ptr(ptr_ip1)
+  # pp core.get_ptr(ptr_ip2)
+  pp core.get_ptr(domain2)
+  pp core.get_ptr(domain4)
 
   puts "\n[+] zone_transfer(domain)"
-  core.get_records_objects(domain5)
-  pp core.get_domainname
-  pp core.zone_transfer(domain3)
+  core.get_records_objects(domain2)
+  pp core.zone_transfer(domain2)
   
 end
 
