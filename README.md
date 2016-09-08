@@ -1,4 +1,4 @@
-# Attack::Domain [![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain)
+# Attack::Domain [![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](http://forthebadge.com) | [![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) | [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain)
 
 It's a wrapper module for all DNS related tasks. 
 
