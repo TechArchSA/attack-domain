@@ -1,8 +1,17 @@
-# Attack::Domain 
+# Attack::Domain [![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain)
 
 It's a wrapper module for all DNS related tasks. 
 
-![travis-cli](https://travis-ci.org/TechArchSA/attack-domain.svg)
+
+| Tracker      |                                                                     **Status**                                                                     |
+|--------------|:--------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Travis-cli   | [![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/)                           |
+| Code Climate | [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain) |
+|              |                                                                                                                                                    |
+
+
+
+
 
 
 
