@@ -240,7 +240,6 @@ module Domain
 
     end
     
-    
   end
 end
 end
@@ -278,6 +277,5 @@ if __FILE__ == $0
   puts "\n[+] zone_transfer(domain)"
   core.get_records_objects(domain2)
   pp core.zone_transfer(domain2)
-  
 end
 
