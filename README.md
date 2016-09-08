@@ -3,18 +3,6 @@
 It's a wrapper module for all DNS related tasks. 
 
 
-| Tracker      |                                                                     **Status**                                                                     |
-|--------------|:--------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Travis-cli   | [![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/)                           |
-| Code Climate | [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain) |
-|              |                                                                                                                                                    |
-
-
-
-
-
-
-
 ## Installation
 
 Add this line to your application's Gemfile:
