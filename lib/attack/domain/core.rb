@@ -193,7 +193,7 @@ module Domain
     #
     def get_zone_transfer(domain)
       # if zone_transfer_enabled? domain
-        ns_records_object = get_records_objects(domain)[:ns]
+        get_records_objects(domain)[:ns]
         zt = Dnsruby::ZoneTransfer.new
         zt.server = get_domainname
         transfer = zt.transfer(domain)
