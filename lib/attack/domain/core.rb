@@ -89,7 +89,7 @@ module Domain
           aaaa:  answer.select { |r| r.type == 'AAAA' },     # v6 A record
           txt:   answer.select { |r| r.type == 'TXT' },      # TEXT
           mx:    answer.select { |r| r.type == 'MX' },       # Mail Exchange
-          :cname answer.select { |r| r.type == 'CNAME' },    # Canonical Name
+          cname: answer.select { |r| r.type == 'CNAME' },    # Canonical Name
           # tsig:  answer.select { |r| r.type == 'TSIG' },     # Transaction Signature
           srv:   answer.select { |r| r.type == 'SRV' },      # Service Record
           hinfo: answer.select { |r| r.type == 'HINFO' },    # Host Information
