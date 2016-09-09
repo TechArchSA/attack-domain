@@ -9,7 +9,7 @@ require 'ipaddr'
 
 module Attack
 module Domain
-    
+  
   #
   # Core contains all core/basic operations. Basically, it's to simplify what we need from Dnsruby
   #
@@ -21,7 +21,6 @@ module Domain
   #   core = Attack::Domain::Core.new('techarch.com.sa', ['8.8.8.8', '8.8.4.4'])
   #   core.nameservers # => ['8.8.8.8', '8.8.4.4']
   #   core.mx #=> [ 'mail1.techarch.com.sa' => ['x1.x1.x1.x1', 'x2.x2.x2.x2'] ]
-  #
   #
   class Core
     
