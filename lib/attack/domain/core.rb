@@ -170,14 +170,14 @@ module Domain
 
         if query.header.ancount >= 1 # {Dnsruby::Header#ancount} returns the number of records in the answer section of the message
           answer = query.answer
-          answer.map {|ans| ans.domainname.to_s}
+          return answer.map {|ans| ans.domainname.to_s}
         else
-          nil
+          return nil
         end
         
       rescue Dnsruby::NXDomain
         # puts '[!] Dnsruby::NXDomain: Domain not exist!'
-        nil
+        return nil
       end
       
     end
