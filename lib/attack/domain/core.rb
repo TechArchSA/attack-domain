@@ -83,18 +83,18 @@ module Domain
       
       @records_objects =
       {
-          :ns    => answer.select { |r| r.type == 'NS' },       # Name Server
-          :soa   => answer.select { |r| r.type == 'SOA' },      # Start Of Authority
-          :a     => answer.select { |r| r.type == 'A' },        # A record
-          :aaaa  => answer.select { |r| r.type == 'AAAA' },     # v6 A record
-          :txt   => answer.select { |r| r.type == 'TXT' },      # TEXT
-          :mx    => answer.select { |r| r.type == 'MX' },       # Mail Exchange
-          :cname => answer.select { |r| r.type == 'CNAME' },    # Canonical Name
-          # :tsig  => answer.select { |r| r.type == 'TSIG' },     # Transaction Signature
-          :srv   => answer.select { |r| r.type == 'SRV' },      # Service Record
-          :hinfo => answer.select { |r| r.type == 'HINFO' },    # Host Information
-          :axfr  => answer.select { |r| r.type == 'AXFR' },     #
-          :ixfr  => answer.select { |r| r.type == 'IXFR' },
+          ns:    answer.select { |r| r.type == 'NS' },       # Name Server
+          soa:   answer.select { |r| r.type == 'SOA' },      # Start Of Authority
+          a:     answer.select { |r| r.type == 'A' },        # A record
+          aaaa:  answer.select { |r| r.type == 'AAAA' },     # v6 A record
+          txt:   answer.select { |r| r.type == 'TXT' },      # TEXT
+          mx:    answer.select { |r| r.type == 'MX' },       # Mail Exchange
+          :cname answer.select { |r| r.type == 'CNAME' },    # Canonical Name
+          # tsig:  answer.select { |r| r.type == 'TSIG' },     # Transaction Signature
+          srv:   answer.select { |r| r.type == 'SRV' },      # Service Record
+          hinfo: answer.select { |r| r.type == 'HINFO' },    # Host Information
+          axfr:  answer.select { |r| r.type == 'AXFR' },     #
+          ixfr:  answer.select { |r| r.type == 'IXFR' },
       }
     end
     
@@ -136,7 +136,7 @@ module Domain
       query_a    = @core.query(domain, 'A')
       query_aaaa = @core.query(domain, 'AAAA') if v6_included
       answer = query_a.answer
-      answer << query_aaaa.answer if v6_included
+      answer << query_raaaa.answer if v6_included
       ips = []
       answer.flatten.each do |ans|
         ips << ans.address.to_s unless ans.type == 'RRSIG' or ans.type == 'CNAME'
@@ -237,7 +237,6 @@ module Domain
       rescue Dnsruby::NXDomain
         false
       end
-
     end
     
   end
@@ -278,4 +277,3 @@ if __FILE__ == $0
   core.get_records_objects(domain2)
   pp core.zone_transfer(domain2)
 end
-
