@@ -136,7 +136,7 @@ module Domain
       query_a    = @core.query(domain, 'A')
       query_aaaa = @core.query(domain, 'AAAA') if v6_included
       answer = query_a.answer
-      answer << query_raaaa.answer if v6_included
+      answer << query_aaaa.answer if v6_included
       ips = []
       answer.flatten.each do |ans|
         ips << ans.address.to_s unless ans.type == 'RRSIG' or ans.type == 'CNAME'
