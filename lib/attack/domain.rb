@@ -1,26 +1,33 @@
 
-# External dependencies
-require 'dnsruby'
 
-# Internal dependencies
-require 'attack/domain/version'
-require 'attack/domain/core'
+#
+# Path Setup
+#
+$LOAD_PATH.unshift(File.join(Dir.pwd, '..', '..','lib'))[0]
+
 
 module Attack
   module Domain
-    #...
+    
+    # https://github.com/evilsocket/bettercap/blob/master/lib/bettercap.rb
+    #
+    # Load all dependencies
+    #
+    def self.autoload
+  
+      # External dependencies
+      require 'dnsruby'
+      require 'whois'
+
+      # Internal dependencies
+      files   = Dir.glob("#{Dir.pwd}/domain/*.rb")
+      files.each do |filename|
+        require filename.gsub('.rb', '')
+        p filename
+      end
+    
+    end
   end
 end
-
-
-# https://github.com/evilsocket/bettercap/blob/master/lib/bettercap.rb
-def attack_domain_autoload(path = '')
-  dir   = File.direname(__FILE__) + "domain/#{path}"
-  deps  = []
-  files = []
-
-  Dir[dir + "**/*.rb"].each do |filename|
-    require filename.gsub(dir, '').gsub('.rb', '')
-  end
-end
+Attack::Domain.autoload
 

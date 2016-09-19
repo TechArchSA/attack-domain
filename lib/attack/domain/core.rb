@@ -79,22 +79,46 @@ module Domain
     def get_records_objects(domain)
       query  = @core.query(domain, 'ANY', 'IN')
       answer = query.answer
-      
+
+
       @records_objects =
       {
-          ns:    answer.select { |r| r.type == 'NS' },       # Name Server
-          soa:   answer.select { |r| r.type == 'SOA' },      # Start Of Authority
-          a:     answer.select { |r| r.type == 'A' },        # A record
-          aaaa:  answer.select { |r| r.type == 'AAAA' },     # v6 A record
-          txt:   answer.select { |r| r.type == 'TXT' },      # TEXT
-          mx:    answer.select { |r| r.type == 'MX' },       # Mail Exchange
-          cname: answer.select { |r| r.type == 'CNAME' },    # Canonical Name
-          # tsig:  answer.select { |r| r.type == 'TSIG' },     # Transaction Signature
-          srv:   answer.select { |r| r.type == 'SRV' },      # Service Record
-          hinfo: answer.select { |r| r.type == 'HINFO' },    # Host Information
-          axfr:  answer.select { |r| r.type == 'AXFR' },     #
-          ixfr:  answer.select { |r| r.type == 'IXFR' },
+          ns:    'NS',       # Name Server
+          soa:   'SOA',      # Start Of Authority
+          a:     'A',        # A record
+          aaaa:  'AAAA',     # v6 A record
+          txt:   'TXT',      # TEXT
+          mx:    'MX',       # Mail Exchange
+          cname: 'CNAME',    # Canonical Name
+          srv:   'SRV',      # Service Record
+          hinfo: 'HINFO',    # Host Information
+          axfr:  'AXFR',     #
+          ixfr:  'IXFR'
       }
+
+      @records_objects.map do |key, val|
+        
+        @records_objects[key] = answer.select { |r| r.type == val }
+        
+      end
+      
+      # p @records_objects
+      # exit
+    #   @records_objects =
+    #   {
+    #       ns:    answer.select { |r| r.type == 'NS' },       # Name Server
+    #       soa:   answer.select { |r| r.type == 'SOA' },      # Start Of Authority
+    #       a:     answer.select { |r| r.type == 'A' },        # A record
+    #       aaaa:  answer.select { |r| r.type == 'AAAA' },     # v6 A record
+    #       txt:   answer.select { |r| r.type == 'TXT' },      # TEXT
+    #       mx:    answer.select { |r| r.type == 'MX' },       # Mail Exchange
+    #       cname: answer.select { |r| r.type == 'CNAME' },    # Canonical Name
+    #       # tsig:  answer.select { |r| r.type == 'TSIG' },     # Transaction Signature
+    #       srv:   answer.select { |r| r.type == 'SRV' },      # Service Record
+    #       hinfo: answer.select { |r| r.type == 'HINFO' },    # Host Information
+    #       axfr:  answer.select { |r| r.type == 'AXFR' },     #
+    #       ixfr:  answer.select { |r| r.type == 'IXFR' },
+    #   }
     end
     
     #
@@ -257,7 +281,8 @@ if __FILE__ == $0
   ptr_ip1 = '54.221.226.67'    # rubyfu.net
   ptr_ip2 = '207.46.197.32'    # owa.zonetransfer.me
   ptr_ip3 = '91.198.174.192'   # wikipedia.org
-
+  
+  
   core = Attack::Domain::Core.new
   core.setup(nameserver: ['8.8.8.8', '8.8.4.4'], recurse: true, dnssec: false)
   puts "[+] get_records_objects(domain)"
