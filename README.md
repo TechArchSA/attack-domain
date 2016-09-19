@@ -1,5 +1,7 @@
-# Attack::Domain  [![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8c81748967664cc5bb92147581fb6802)](https://www.codacy.com/app/king-sabri/attack-domain?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TechArchSA/attack-domain&amp;utm_campaign=Badge_Grade)
+# Attack::Domain 
+[![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8c81748967664cc5bb92147581fb6802)](https://www.codacy.com/app/king-sabri/attack-domain?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TechArchSA/attack-domain&amp;utm_campaign=Badge_Grade)
 
+## DESCRIPTION:
 It's a wrapper module for all DNS related tasks. 
 
 
@@ -7,17 +9,21 @@ It's a wrapper module for all DNS related tasks.
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'attack-domain'
+```
+gem install attack-domain
 ```
 
-And then execute:
+## Requirements
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install attack-domain
+* Ruby 2.x
+* Run-time Dependencies:
+  * [Dnsruby](https://github.com/alexdalitz/dnsruby) — an intelligent, pure Ruby, WHOIS client and parser
+  * [Whois](https://github.com/weppos/whois) — a feature-complete DNS(SEC) client for Ruby
+* Development dependencies (not required for installing the gem):
+  * [Bundler](http://bundler.io/) — creating the stable build environment
+  * [Rake](https://rubygems.org/gems/rake) — building the package
+  * [Yard](http://yardoc.org/) — the documentation
+  * [RSpec](https://relishapp.com/rspec/) — additional Ruby Spec test files
 
 ## Usage
 
@@ -25,9 +31,11 @@ TODO: Write usage instructions here
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Testing
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+rspec spec/attack/domain/core_spec.rb --color
+```
 
 ## Contributing
 
