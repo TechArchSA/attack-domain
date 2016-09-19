@@ -24,6 +24,7 @@ gem install attack-domain
   * [Rake](https://rubygems.org/gems/rake) — building the package
   * [Yard](http://yardoc.org/) — the documentation
   * [RSpec](https://relishapp.com/rspec/) — additional Ruby Spec test files
+  * [awesome_print](https://github.com/awesome-print/awesome_print) — Pretty print your Ruby objects with style
 
 ## Usage
 
