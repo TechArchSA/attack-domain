@@ -1,5 +1,6 @@
 # Attack::Domain (Under heavy development)
-[![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8c81748967664cc5bb92147581fb6802)](https://www.codacy.com/app/king-sabri/attack-domain?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TechArchSA/attack-domain&amp;utm_campaign=Badge_Grade)
+[![travis-cli](https://api.travis-ci.org/TechArchSA/attack-domain.svg)](https://travis-ci.org/TechArchSA/attack-domain/) [![Code Climate](https://codeclimate.com/github/TechArchSA/attack-domain/badges/gpa.svg)](https://codeclimate.com/github/TechArchSA/attack-domain) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8c81748967664cc5bb92147581fb6802)](https://www.codacy.com/app/king-sabri/attack-domain?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TechArchSA/attack-domain&amp;utm_campaign=Badge_Grade)  [![inch-ci](https://inch-ci.org/github/TechArchSA/attack-domain.svg?branch=master)](https://inch-ci.org/github/TechArchSA/attack-domain.svg?branch=master)
+
 
 ## DESCRIPTION:
 It's a wrapper module for all DNS related tasks. 
