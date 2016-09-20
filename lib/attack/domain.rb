@@ -23,7 +23,7 @@ module Attack
       files   = Dir.glob("#{Dir.pwd}/domain/*.rb")
       files.each do |filename|
         require filename.gsub('.rb', '')
-        p filename
+        # p filename
       end
     
     end
