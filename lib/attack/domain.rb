@@ -3,7 +3,7 @@
 #
 # Path Setup
 #
-$LOAD_PATH.unshift(File.join(Dir.pwd, '..', '..','lib'))[0]
+$LOAD_PATH.unshift(File.join( File.dirname(File.expand_path(__FILE__)), '..', '..','lib') )
 
 
 module Attack
